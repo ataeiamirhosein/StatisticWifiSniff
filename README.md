@@ -1,10 +1,11 @@
 # WifiSniffing
 statistical survey  
 
-in the wifi we have seven mode that we discuss about three important mode which are:
-1-monitor
-2-managed
-3-master
+in the wifi we have seven mode that we discuss about three important mode which are:  
+
+1- monitor  
+2- managed  
+3- master  
 
 first of all we should keep update and get new things in linux:
 ```
