@@ -1,7 +1,8 @@
 # WifiSniffing
-statistical survey
-'''
-sudo apt-get install tshark
-sudo dpkg-reconfigure wireshark-common     (select YES)
-sudo usermod -a -G wireshark ${USER:-root}
-'''
+statistical survey  
+
+```
+sudo apt-get install tshark  
+sudo dpkg-reconfigure wireshark-common  
+sudo usermod -a -G wireshark ${USER:-root}  
+```
