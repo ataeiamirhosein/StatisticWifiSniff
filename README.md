@@ -26,9 +26,18 @@ sudo pip3 install pyshark
 ```
 
 ```
-sudo iwconfig 
-sudo ifconfig
+sudo iwconfig
+sudo iwconfig <interface> mode monitor
+sudo iwconfig <interface> mode managed
+sudo ifconfig <interface> down
+sudo ifconfig <interface> up
 ```
+tshark for getting packets  
+```
+tshark -i <interface> -I
+```
+`-I` capture in monitor mode, if available
+
 for debugging you can use:
 ```
 lspci
