@@ -32,6 +32,9 @@ sudo apt-get install tshark
 sudo pip3 install pyshark  
 ```
 
+with this link we can find all the type of filtering about the wireless lan
+https://www.wireshark.org/docs/dfref/w/wlan.html
+
 ```
 sudo iwconfig
 sudo iwconfig <interface> mode monitor
@@ -41,11 +44,15 @@ sudo ifconfig <interface> up
 ```
 tshark for getting packets  
 ```
-tshark -i <interface> -I
+sudo tshark -i <interface> -I
 ```
 `-I` capture in monitor mode, if available
 
+*you need to be a super user to access the tshark commadn for capturing packets*
+
 for debugging you can use:
 ```
-lspci
+sudo lspci
+sudo ifconfig
 ```
+with this commands we can see all the network interface card that available in host
