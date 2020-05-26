@@ -55,4 +55,11 @@ for debugging you can use:
 sudo lspci
 sudo ifconfig
 ```
+
+```
+iw dev
+cat /proc/net/wireless
+iw dev 
+```
+
 with this commands we can see all the network interface card that available in host
