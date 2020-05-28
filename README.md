@@ -65,7 +65,7 @@ iw dev
 cat /proc/net/wireless
 ```
 
-all things tested on linux 20.04 focal
+all things tested on linux 20.04 focal and i run all the things with normal edup mini wifi dongle that support monitor mode
 
 with this commands we can see all the network interface card that available in host
 ## LICENSE
