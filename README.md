@@ -63,6 +63,8 @@ iw dev
 cat /proc/net/wireless
 ```
 
+all things tested on linux 20.04 focal
+
 with this commands we can see all the network interface card that available in host
 ## LICENSE
 MIT  
