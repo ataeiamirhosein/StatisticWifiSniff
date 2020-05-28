@@ -236,7 +236,7 @@ for l in range(0, len(unique_ssid)):
 #
 # unique_indexo = numpy.unique(indexo)
 #
-print(unique_indexo)
+print(indexo)
 print(indext)
 #
 indexth = []

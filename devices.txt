@@ -1,6 +1,6 @@
 devices = ['Motorola Mobility LLC, a Lenovo Company',
            'GUANGDONG OPPO MOBILE TELECOMMUNICATIONS CORP.,LTD',
-           'Huawei Symantec Technologies Co.,Ltd.',
+           'HUAWEI TECHNOLOGIES CO.,LTD',
            'Microsoft Corporation',
            'HTC Corporation',
            'Samsung Electronics Co.,Ltd',
