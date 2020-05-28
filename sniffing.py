@@ -141,7 +141,7 @@ print(Fore.YELLOW)
 print("\n-->scaning frames take a moments ...")
 print(Fore.WHITE + Back.BLACK)
 #
-procsi = Popen(["tshark", "-i", option, "-I", "-a", "packets:128", "-w", "cap.pcapng", "-F", "pcapng"], stdout=PIPE, stderr=PIPE)
+procsi = Popen(["tshark", "-i", option, "-I", "-a", "packets:256", "-w", "cap.pcapng", "-F", "pcapng"], stdout=PIPE, stderr=PIPE)
 outsi = procsi.communicate()
 #
 cap = pyshark.FileCapture('cap.pcapng')
@@ -159,7 +159,7 @@ countero = 0
 #capturing wireless signal from adapter in monitor mode and filtering all the beacon feames for processing
 for packet in cap:
     try:
-        #filter for all management frames
+        #filter for all management frames avoid mac randomization
         if packet.wlan.fc_type == '0':
             ssid = packet.layers[3].wlan_ssid
             mac = packet.wlan.sa
@@ -233,23 +233,27 @@ for l in range(0, len(unique_ssid)):
         if unique_ssid[l] == ssid_list[k]:
             indexo.append(l)
             indext.append(k)
+unique_indexo = numpy.unique(indexo)
 #
-# unique_indexo = numpy.unique(indexo)
+trssi = []
+for h in range(0, len(unique_indexo)):
+    coun = 0
+    for l in range(0, len(indexo)):
+        if h == indexo[l]:
+            coun = coun + 1
+    trssi.append(coun)
 #
-print(indexo)
-print(indext)
-#
-indexth = []
-#
-for n in range(0, len(find)):
-    for m in range(0, len(unique_mac)):
-        if find[n] == unique_mac[m]:
-            indexth.append(m)
-#
-print(indexth)
+unique_rssi = []
+for d in range(0, len(trssi)):
+    rssi = 0
+    for k in range(0, trssi[d]):
+        tem = indext[k]
+        rssi = rssi + float(rssi_list[tem])
+    rssi = rssi / trssi[d]
+    unique_rssi.append(rssi)
 
 
-#innovate a method for seprating list of devices that use by people getting from gsm source to another equipment like access points with filtering
+#innovate a simple method for seprating list of devices that use by people getting from gsm source to another equipment like access points with filtering
 #%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -303,18 +307,18 @@ print(Fore.GREEN)
 #%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-s = pd.Series([1, 2, 3, 4])
-fig, ax = plt.subplots()
-s.plot.bar()
-fig.savefig('plot.png')
+plt.bar(unique_ssid, unique_rssi)
+plt.suptitle(' RSSI (dbm) ')
+plt.xticks(rotation='85')
+plt.savefig('plot.png')
 
 
-#statistic out file section
+#statistic out file section usage for detecting density of people in a specific place for control something
 #%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
  
 filetw = open('result.html', 'w')
-filetw.write("""<!DOCTYPE html>\n<html>\n<head>\n<title>statistic_wifi_sniff</title>\n</head>\n<body>\n<div align='center'>\n<h2>statistic wifi sniff</h2>\n<hr>\n<img src='plot.png'>\n<p><font color='green'>-the closer it is to zero, the stronger the signal is. </font><font color='purple'>so it is nearest.</font></p>\n<br>\n<hr>\n<p><font color='blue'>> total physical address near you = </font>""" + str(unique_mac) + """<font color='red'> that probably active person = </font>""" + str(find) + """</p>\n<p><font color='brown'>> the name of people = </font>""" + str(unique_ssid) + """</p>\n<p><font color='brown'>> name of equipment vendor = </font>""" + str(names) + """</p>\n<hr>\n<p>-see <a href="https://github.com/ataeiamirhosein/StatisticWifiSniff/blob/master/devices.txt" target="_blank">LIST</a> of sorted vendor that produce equipment that used by people such as phone, tablet and laptop.</p><hr>\n<p><a href="https://github.com/ataeiamirhosein" target="_blank">amirhosein ataei</a><p>\n</div>\n</body>\n</html>""")
+filetw.write("""<!DOCTYPE html>\n<html>\n<head>\n<title>statistic_wifi_sniff</title>\n</head>\n<body>\n<div align='center'>\n<h2>statistic wifi sniff</h2>\n<hr>\n<img src='plot.png'>\n<br>\n<p><font color='green'>-the closer it is to zero, the stronger the signal is. </font><font color='purple'>so it is nearest.</font></p>\n<br>\n<hr>\n<p><font color='blue'>> total physical address near you = </font>""" + str(unique_mac) + """<br>\n<font color='red'></p>\n<p>> that valid mac = </font>""" + str(find) + """</p>\n<p><font color='brown'>> the name of people = </font>""" + str(unique_ssid) + """</p>\n<p><font color='orange'>> name of equipment vendor = </font>""" + str(names) + """</p>\n<hr>\n<p>time complexity = """ + str(total_time) + """</p><p>number of people near you = """ + str(v) + """</p>\n<hr>\n<p>-see <a href="https://github.com/ataeiamirhosein/StatisticWifiSniff/blob/master/devices.txt" target="_blank">LIST</a> of sorted vendor that produce equipment that used by people such as phone, tablet and laptop.</p><hr>\n<p><a href="https://github.com/ataeiamirhosein" target="_blank">amirhosein ataei</a><p>\n</div>\n</body>\n</html>""")
 filetw.close()
 #now we can see all the data in result file for devices and in cap file about capture frame also oui file
 print('\n* see all detection in result file that will be open automatically\n\n* all operations was succesfull so stop *\n' + Style.RESET_ALL)
