@@ -16,7 +16,9 @@ onr of the method for counting number of people with sniffing is that counting t
 so i change the standard oui file and exploit all the vendor that prodeuce the smart device that people use in a day
 for instance laptop or phone or tablet  
 
-first of all we should keep update and get new things in linux:
+first of all install all the dependency with `pip install -r requirements.txt` command
+
+we should keep update and get new things in linux:
 ```
 sudo apt clean  
 sudo apt autoremove  
