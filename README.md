@@ -1,6 +1,8 @@
 # WifiSniffing
 statistical survey  
 
+nowaday almost 70 percent of people access to the smart phone
+
 in the wifi we have seven mode that we discuss about three important mode which are:  
 
 1- monitor  
