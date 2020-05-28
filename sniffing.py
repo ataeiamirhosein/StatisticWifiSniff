@@ -117,7 +117,7 @@ print(od)
 #
 print("\n-->scaning frames ...")
 #
-procsi = Popen(["tshark", "-i", option, "-I", "-a", "packets:64", "-w", "cap.pcapng", "-F", "pcapng"], stdout=PIPE, stderr=PIPE)
+procsi = Popen(["tshark", "-i", option, "-I", "-a", "packets:256", "-w", "cap.pcapng", "-F", "pcapng"], stdout=PIPE, stderr=PIPE)
 outsi = procsi.communicate()
 #
 cap = pyshark.FileCapture('cap.pcapng')
@@ -153,8 +153,6 @@ print("\n-->captured " + str(countero) + " probes")
 #
 unique_mac = numpy.unique(mac_list)
 unique_ssid = numpy.unique(ssid_list)
-#
-
 #
 print("\nunique ssid: " + str(unique_ssid))
 #converting the format of macs
@@ -236,10 +234,10 @@ filetw.write("""<!DOCTYPE html>\n<html>\n<head>\n<title>statistic_wifi_sniff</ti
 filetw.close()
 #now we can see all the data in result file for devices and in cap file about capture frame also oui file
 print('\n* see all detection in result file that will be open automatically\n\n* all operations was succesfull so stop *\n' + Style.RESET_ALL)
-#
+#getting the usename of linux os
 u = os.popen('whoami')
 user = u.read()
-#
+#we should change the permission of group in os to access the html out result file
 final = Popen(["sudo", "-S", "chown", "-v", user.strip(), "result.html"], stdin=PIPE, stdout=PIPE, stderr=PIPE)
 ofinal = final.communicate(password.encode())
 #open the out file via browser automatically
