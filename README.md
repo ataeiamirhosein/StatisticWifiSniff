@@ -1,6 +1,8 @@
 # WifiSniffing
 statistical survey using for counting people in a region of wifi  
+
 ![](https://github.com/ataeiamirhosein/StatisticWifiSniff/blob/master/wifisniff.gif)
+
 nowaday almost 70 percent of people access to the smart phone  
 
 so we can use from this 
