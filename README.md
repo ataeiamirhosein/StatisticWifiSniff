@@ -1,6 +1,10 @@
 # WifiSniffing
 statistical survey  
 
+![](name-of-giphy.gif)
+
+https://gph.is/g/ZddJWY8
+
 nowaday almost 70 percent of people access to the smart phone
 
 in the wifi we have seven mode that we discuss about three important mode which are:  
