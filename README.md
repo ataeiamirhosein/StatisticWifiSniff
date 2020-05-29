@@ -1,8 +1,9 @@
 # WifiSniffing
-statistical survey  
+statistical survey using for counting people in a region of wifi  
 
+nowaday almost 70 percent of people access to the smart phone  
 
-nowaday almost 70 percent of people access to the smart phone
+so we can use from this 
 
 in the wifi we have seven mode that we discuss about three important mode which are:  
 
