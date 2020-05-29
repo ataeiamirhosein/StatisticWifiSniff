@@ -14,7 +14,6 @@ import pyshark
 import numpy
 import itertools
 import matplotlib.pyplot as plt
-import time
 import netifaces
 import curses
 import requests
