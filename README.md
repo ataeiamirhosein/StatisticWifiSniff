@@ -1,6 +1,8 @@
 # WifiSniffing
 statistical survey using for counting people in a region of wifi  
 
+![wifi sniff]()
+
 https://media.giphy.com/media/cIEKapzLjmehD599fC/giphy.gif
 
 nowaday almost 70 percent of people access to the smart phone  
