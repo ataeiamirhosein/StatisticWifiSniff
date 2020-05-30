@@ -1,7 +1,7 @@
 # WifiSniffing
 statistical survey using for counting people in a region of wifi  
 
-![wifi sniff]()
+![wifi sniff](https://github.com/ataeiamirhosein/StatisticWifiSniff/blob/master/Screenshot.png)
 
 https://media.giphy.com/media/cIEKapzLjmehD599fC/giphy.gif
 
