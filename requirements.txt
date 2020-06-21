@@ -1,1 +1,7 @@
-
+pandas==1.0.5
+pyshark==0.4.2.11
+numpy==1.19.0
+matplotlib==3.2.2
+click==7.1.2
+colorama==0.4.3
+pick==0.6.7
