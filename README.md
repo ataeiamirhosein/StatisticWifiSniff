@@ -58,7 +58,7 @@ sudo tshark -i <interface> -I
 ```
 `-I` capture in monitor mode, if available
 
-*you need to be a super user to access the `tshark` commadn for capturing packets*
+*you need to be a super user to access the `tshark` command for capturing packets*
 
 for debugging you can use:
 ```
