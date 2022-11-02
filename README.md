@@ -18,7 +18,7 @@ in the wifi we have seven mode that we discuss about three important mode which 
 this link is for standard text file that include the information of vendor such as mac address and the name of company
 http://standards-oui.ieee.org/oui.txt
 
-onr of the method for counting number of people with sniffing is that counting their devices that use them
+one of the method for counting number of people with sniffing is that counting their devices that use them
 so i change the standard oui file and exploit all the vendor that prodeuce the smart device that people use in a day
 for instance laptop or phone or tablet  
 
