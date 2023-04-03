@@ -1,7 +1,7 @@
 
-#<author amirhosein ataei
-#important github repo
-# thanks from https://github.com/statisticsniff/howmanypeoplearearound
+#author: amirhosein ataei
+#[important github repo]
+#thanks from https://github.com/statisticsniff/howmanypeoplearearound
 #%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -332,7 +332,7 @@ urlhtml = 'result.html'
 webbrowser.open(urlhtml, new=2)
 
 
-#end of program>
-#reference
-# thanks from https://macaddress.io/
+#end of program
+#reference:
+#thanks from https://macaddress.io/
 #%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
